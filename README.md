@@ -23,3 +23,5 @@ Losing my identity
 Wondering, "Have I gone insane?"
 To find the truth in front of me I must climb this mountain range
 Looking downward from this deadly height and never realizing why I fight*
+
+![cat](https://i.imgur.com/Ch66hFy.png)
