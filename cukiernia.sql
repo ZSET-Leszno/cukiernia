@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 20 Lut 2023, 13:59
+-- Czas generowania: 21 Lut 2023, 10:22
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.1.6
 
@@ -43,9 +43,16 @@ CREATE TABLE `klienci` (
 --
 
 INSERT INTO `klienci` (`id`, `imie`, `nazwisko`, `num_tel`, `miasto`, `ulica`, `nr_domu`, `czy_stały`) VALUES
-(1, 'Kamil', 'Ślimak', 123456789, 'Garzyn', 'Kowalska', 10, 1),
+(1, 'Kamil', 'Ślimak', 199267094, 'Garzyn', 'Kowalska', 10, 1),
 (2, 'Michał', 'Ślimak', 987654321, 'Leszno', '3 Maja', 69, 0),
-(3, 'Kamil', 'Pierwiastek', 576682359, 'Lipno', 'Jana Pawła 2', 3, 1);
+(3, 'Kamil', 'Pierwiastek', 576682359, 'Lipno', 'Jana Pawła 2', 3, 1),
+(4, 'Jadwiga', 'Kurtz', 956041295, 'Wrocław', 'Kręta', 41, 0),
+(5, 'Stanisław', 'Słowiański', 865745027, 'Leszno', 'Kwiatowa', 7, 1),
+(6, 'Kamil', 'Janowski', 761951932, 'Kąkolewo', 'Rydzyńska', 28, 0),
+(7, 'Olga', 'Czerniewicz', 955967813, 'Kościan', '3 Maja', 1, 0),
+(8, 'Stanisław', 'Kurtz', 806654375, 'Leszno', 'Jana Sobieskiego', 69, 0),
+(9, 'Anna', 'Pierwiastek', 763491278, 'Osieczna', 'Norwida', 33, 1),
+(10, 'Jan', 'Czerniewicz', 760839554, 'Wrocław', 'Jana Sobieskiego', 28, 1);
 
 -- --------------------------------------------------------
 
@@ -68,9 +75,16 @@ CREATE TABLE `pracownicy` (
 --
 
 INSERT INTO `pracownicy` (`id`, `imie`, `nazwisko`, `posada`, `num_tel`, `miasto`, `wypłata`) VALUES
-(1, 'Michał', 'Adam', 'Kierownik', 234645785, 'Krzywiń', 1240),
+(1, 'Michał', 'Adam', 'Kierownik', 234645785, 'Krzywiń', 4320),
 (2, 'Janusz', 'Tracz', 'Menadżer', 696969420, 'Poznań', 43900),
-(3, 'Jan', 'Kowalski', 'Pracownik', 11119, 'Janiszewo', 100);
+(3, 'Jan', 'Kowalski', 'Pracownik', 879057841, 'Januszewo', 3400),
+(4, 'Marian', 'Jakubiak', 'Pracownik', 705692306, 'Poznań', 2980),
+(5, 'Michał', 'Kowalski', 'Kierownik', 960488639, 'Święciechowa', 4320),
+(6, 'Zofia', 'Ptak', 'Pracownik', 572865049, 'Rydzyna', 3100),
+(7, 'Jan', 'Lichwa', 'Menedżer', 918659648, 'Leszno', 38600),
+(8, 'Paweł', 'Kowalski', 'Stażysta ', 603951860, 'Poznań', 1400),
+(9, 'Agnieszka', 'Paź', 'Pracownik', 859069835, 'Pelikan', 3590),
+(10, 'Janusz', 'Ptak', 'Pracownik', 968754387, 'Krzemieniewo', 3400);
 
 -- --------------------------------------------------------
 
@@ -83,17 +97,24 @@ CREATE TABLE `produkty` (
   `nazwa` varchar(225) NOT NULL,
   `rodzaj` int(11) NOT NULL,
   `cena` float NOT NULL,
-  `waga` int(11) NOT NULL,
-  `obraz` blob NOT NULL
+  `waga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Zrzut danych tabeli `produkty`
 --
 
-INSERT INTO `produkty` (`id`, `nazwa`, `rodzaj`, `cena`, `waga`, `obraz`) VALUES
-(5, 'Draże Korsarze', 5, 2.59, 120, ''),
-(6, 'Magdalenka', 4, 1.2, 20, '');
+INSERT INTO `produkty` (`id`, `nazwa`, `rodzaj`, `cena`, `waga`) VALUES
+(5, 'Draże Korsarze', 5, 2.59, 120),
+(6, 'Magdalenka', 4, 1.2, 20),
+(7, 'Sernik', 2, 7.99, 400),
+(8, 'Mrożona Gała', 5, 3.5, 50),
+(9, 'Muffinek', 3, 9.89, 70),
+(10, 'Tort Shrek', 1, 39.99, 5000),
+(11, 'Cappuccino', 4, 4.99, 150),
+(12, 'Jupiter', 2, 6.5, 250),
+(13, 'Pieguski', 3, 2.99, 100),
+(14, 'Makaroniki', 3, 4.99, 120);
 
 -- --------------------------------------------------------
 
@@ -213,19 +234,19 @@ ALTER TABLE `zamówienia_info`
 -- AUTO_INCREMENT dla tabeli `klienci`
 --
 ALTER TABLE `klienci`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `pracownicy`
 --
 ALTER TABLE `pracownicy`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `produkty`
 --
 ALTER TABLE `produkty`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT dla tabeli `rodzaje`
