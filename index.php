@@ -7,8 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="index.html" method="post">
-
+    <form action="index.php" method="post">
+        <textarea name="tak"></textarea><br>
+        <input type="submit" name='a' value='Wyślij'> 
     </form>
+    <?php
+
+    ?>
 </body>
 </html>
