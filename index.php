@@ -20,19 +20,29 @@
     }
 
     $tak = $_POST['tak'];
+    if (!$tak) {
+        echo "Nie wprowadziłeś żadnych danych!";
+    }
 
     $aye = mysqli_query($conn,"$tak");
 
-    if (!$aye) {
+    if (!@$aye) {
         null;
     } else {
-        $count = mysqli_num_rows($aye);
-        $i = 0;
+        // $count = mysqli_num_rows($aye);
+        // $i = 0;
 
-        while($i < $count) {
-            $i++;
-            $ay = mysqli_fetch_array($aye);
-            echo $ay;
+        // while($i < $count) {
+        //     $i++;
+        //     $ay = mysqli_fetch_array($aye);
+        //     echo "$ay[0], $ay[1], $ay[2], $ay[3], $ay[4], $ay[5], $ay[6], $ay[7]<br>";
+        // }
+        $ay = mysqli_fetch_array($aye);
+        $odp = 3202;
+        if ($ay[0] == $odp) {
+            echo "Gratulacje użytkowniku, odnalazłeś hasło, a brzmi ono: $odp.";
+        } else {
+            echo "To niepoprawna odpowiedź, spróbuj ponownie.";
         }
     }
 
