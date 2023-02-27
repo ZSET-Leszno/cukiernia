@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 21 Lut 2023, 10:22
+-- Czas generowania: 27 Lut 2023, 13:04
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.1.6
 
@@ -155,9 +155,16 @@ CREATE TABLE `zamówienia` (
 --
 
 INSERT INTO `zamówienia` (`id`, `zawartość`) VALUES
-(1, '2 Magdalenki, 3 Draże Korsarze, 1 Orzechowa historia'),
-(2, '1 Orzechowa historia'),
-(3, '2 Magdalenki');
+(1, 'Muffinek, Draże Korsarze, Makaroniki'),
+(2, 'Mrożona Gała, Sernik, Tort Shrek'),
+(3, 'Pieguski, Makaroniki, Sernik'),
+(4, 'Sernik, Cappuccino'),
+(5, 'Draże Korsarze'),
+(6, 'Tort Shrek, Jupiter'),
+(7, 'Cappuccino, Magdalenka, Sernik'),
+(8, 'Muffinek, Pieguski'),
+(9, 'Jupiter, Cappuccino, Mrożona Gała'),
+(10, 'Tort Shrek, Magdalenka, Makaroniki, Draże Korsarze');
 
 -- --------------------------------------------------------
 
@@ -179,9 +186,9 @@ CREATE TABLE `zamówienia_info` (
 --
 
 INSERT INTO `zamówienia_info` (`id`, `id_klienta`, `id_zamówienia`, `data_zamówienia`, `data_wykonania`, `cena_dostawy`) VALUES
-(1, 1, 3, '2023-02-14', '2023-02-14', 2.5),
-(2, 2, 1, '2023-02-14', '2023-02-16', 2.5),
-(3, 3, 2, '2023-01-10', '2023-02-18', 2.5);
+(1, 3, 5, '2023-02-14', '2023-02-14', 8.4),
+(2, 8, 6, '2023-02-14', '2023-02-16', 12),
+(3, 2, 10, '2023-02-17', '2023-02-24', 10);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -258,7 +265,7 @@ ALTER TABLE `rodzaje`
 -- AUTO_INCREMENT dla tabeli `zamówienia`
 --
 ALTER TABLE `zamówienia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `zamówienia_info`
