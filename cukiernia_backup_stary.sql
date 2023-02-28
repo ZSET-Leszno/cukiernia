@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Lut 2023, 10:56
--- Wersja serwera: 10.4.24-MariaDB
--- Wersja PHP: 8.1.6
+-- Czas generowania: 27 Lut 2023, 14:05
+-- Wersja serwera: 10.4.13-MariaDB
+-- Wersja PHP: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -142,63 +142,57 @@ INSERT INTO `rodzaje` (`id`, `rodzaj`, `czy_na_wynos`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `szczegóły`
---
-
-CREATE TABLE `szczegóły` (
-  `id` int(11) NOT NULL,
-  `id_zamówienia` int(11) NOT NULL,
-  `id_produktu` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Zrzut danych tabeli `szczegóły`
---
-
-INSERT INTO `szczegóły` (`id`, `id_zamówienia`, `id_produktu`) VALUES
-(1, 5, 9),
-(2, 5, 5),
-(3, 5, 14),
-(4, 1, 5),
-(5, 2, 10),
-(6, 2, 12),
-(7, 3, 10),
-(8, 3, 6),
-(9, 3, 14),
-(10, 3, 5),
-(11, 4, 12),
-(12, 4, 11),
-(13, 4, 8),
-(14, 6, 5),
-(15, 7, 10),
-(16, 7, 12);
-
--- --------------------------------------------------------
-
---
 -- Struktura tabeli dla tabeli `zamówienia`
 --
 
 CREATE TABLE `zamówienia` (
   `id` int(11) NOT NULL,
-  `id_klienta` int(11) NOT NULL,
-  `data_zamówienia` date NOT NULL,
-  `data_wykonania` date DEFAULT NULL,
-  `cena_dostawy` float NOT NULL
+  `zawartość` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Zrzut danych tabeli `zamówienia`
 --
 
-INSERT INTO `zamówienia` (`id`, `id_klienta`, `data_zamówienia`, `data_wykonania`, `cena_dostawy`) VALUES
-(1, 3, '2023-02-14', '2023-02-14', 8.4),
-(2, 8, '2023-02-14', '2023-02-16', 12),
-(3, 2, '2023-02-17', '2023-02-24', 10),
-(4, 5, '2023-02-17', '2023-02-17', 0),
-(5, 8, '2023-02-20', NULL, 10.25),
-(6, 1, '2023-02-20', '2023-02-20', 0),
-(7, 10, '2023-02-28', '2023-03-02', 12.5);
+INSERT INTO `zamówienia` (`id`, `zawartość`) VALUES
+(1, 'Muffinek, Draże Korsarze, Makaroniki'),
+(2, 'Mrożona Gała, Sernik, Tort Shrek'),
+(3, 'Pieguski, Makaroniki, Sernik'),
+(4, 'Sernik, Cappuccino'),
+(5, 'Draże Korsarze'),
+(6, 'Tort Shrek, Jupiter'),
+(7, 'Cappuccino, Magdalenka, Sernik'),
+(8, 'Muffinek, Pieguski'),
+(9, 'Jupiter, Cappuccino, Mrożona Gała'),
+(10, 'Tort Shrek, Magdalenka, Makaroniki, Draże Korsarze');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `zamówienia_info`
+--
+
+CREATE TABLE `zamówienia_info` (
+  `id` int(11) NOT NULL,
+  `id_klienta` int(11) NOT NULL,
+  `id_zamówienia` int(11) NOT NULL,
+  `data_zamówienia` date NOT NULL,
+  `data_wykonania` date DEFAULT NULL,
+  `cena_dostawy` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `zamówienia_info`
+--
+
+INSERT INTO `zamówienia_info` (`id`, `id_klienta`, `id_zamówienia`, `data_zamówienia`, `data_wykonania`, `cena_dostawy`) VALUES
+(1, 3, 5, '2023-02-14', '2023-02-14', 8.4),
+(2, 8, 6, '2023-02-14', '2023-02-16', 12),
+(3, 2, 10, '2023-02-17', '2023-02-24', 10),
+(4, 5, 9, '2023-02-17', '2023-02-17', 0),
+(5, 8, 1, '2023-02-20', NULL, 10.25),
+(6, 1, 5, '2023-02-20', '2023-02-20', 0),
+(7, 10, 6, '2023-02-28', '2023-03-02', 12.5);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -230,22 +224,21 @@ ALTER TABLE `rodzaje`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeksy dla tabeli `szczegóły`
---
-ALTER TABLE `szczegóły`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_produktu` (`id_produktu`),
-  ADD KEY `id_zamówienia` (`id_zamówienia`);
-
---
 -- Indeksy dla tabeli `zamówienia`
 --
 ALTER TABLE `zamówienia`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_klienta` (`id_klienta`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT dla zrzuconych tabel
+-- Indeksy dla tabeli `zamówienia_info`
+--
+ALTER TABLE `zamówienia_info`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_klienta` (`id_klienta`),
+  ADD KEY `id_zamówienia` (`id_zamówienia`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
@@ -273,15 +266,15 @@ ALTER TABLE `rodzaje`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT dla tabeli `szczegóły`
---
-ALTER TABLE `szczegóły`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
 -- AUTO_INCREMENT dla tabeli `zamówienia`
 --
 ALTER TABLE `zamówienia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT dla tabeli `zamówienia_info`
+--
+ALTER TABLE `zamówienia_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
@@ -295,17 +288,11 @@ ALTER TABLE `produkty`
   ADD CONSTRAINT `produkty_ibfk_1` FOREIGN KEY (`rodzaj`) REFERENCES `rodzaje` (`id`);
 
 --
--- Ograniczenia dla tabeli `szczegóły`
+-- Ograniczenia dla tabeli `zamówienia_info`
 --
-ALTER TABLE `szczegóły`
-  ADD CONSTRAINT `szczegóły_ibfk_1` FOREIGN KEY (`id_produktu`) REFERENCES `produkty` (`id`),
-  ADD CONSTRAINT `szczegóły_ibfk_2` FOREIGN KEY (`id_zamówienia`) REFERENCES `zamówienia` (`id`);
-
---
--- Ograniczenia dla tabeli `zamówienia`
---
-ALTER TABLE `zamówienia`
-  ADD CONSTRAINT `zamówienia_ibfk_1` FOREIGN KEY (`id_klienta`) REFERENCES `klienci` (`id`);
+ALTER TABLE `zamówienia_info`
+  ADD CONSTRAINT `zamówienia_info_ibfk_1` FOREIGN KEY (`id_klienta`) REFERENCES `klienci` (`id`),
+  ADD CONSTRAINT `zamówienia_info_ibfk_2` FOREIGN KEY (`id_zamówienia`) REFERENCES `zamówienia` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
