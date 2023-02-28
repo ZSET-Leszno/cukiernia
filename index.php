@@ -8,42 +8,39 @@
 </head>
 <body>
     <form action="index.php" method="post">
-        <textarea name="tak"></textarea><br>
-        <input type="submit" name='a' value='Wyślij'> 
+        <textarea name="quest" required></textarea><br>
+        <input type="submit" value="Wyślij"> 
     </form>
     <?php
+
+    function sprobuj($qst) {
+        if ($qst != 3202) {
+            throw new Exception("Lekka kraksa");
+        }
+    }
     
     $conn = mysqli_connect('localhost','root','','cukiernia');
 
     if(!$conn) {
-        echo 'bullshit';
+        echo 'Wystąpił bląd podczas komunikacji z serwerem. Spróbuj ponownie później.';
     }
 
-    $tak = $_POST['tak'];
-    if (!$tak) {
-        echo "Nie wprowadziłeś żadnych danych!";
-    } else {
-        $aye = mysqli_query($conn,"$tak");
+    @$quest = $_POST['quest'];
 
-        if (!$aye) {
-            null;
-        } else {
-            // $count = mysqli_num_rows($aye);
-            // $i = 0;
-    
-            // while($i < $count) {
-            //     $i++;
-            //     $ay = mysqli_fetch_array($aye);
-            //     echo "$ay[0], $ay[1], $ay[2], $ay[3], $ay[4], $ay[5], $ay[6], $ay[7]<br>";
-            // }
-            $ay = mysqli_fetch_array($aye);
-            $odp = 3202;
-            if ($ay[0] == $odp) {
-                echo "Gratulacje użytkowniku, odnalazłeś hasło, a brzmi ono: $odp.";
+    try {
+        if($quest) {
+            $zapytanie = mysqli_query($conn,"$quest");
+            if (!$zapytanie) {
+                throw new Exception($zapytanie->error);
             } else {
-                echo "To niepoprawna odpowiedź, spróbuj ponownie.";
+                $qst = mysqli_fetch_array($zapytanie);
+                sprobuj($qst[0]);
+                echo "Udało ci się! Przeszedłeś tę przeszkodę";
             }
-        }
+        }    
+    }
+    catch (Exception $error) {
+        echo 'Wystąpił błąd, spróbuj ponownie';
     }
 
     mysqli_close($conn);
