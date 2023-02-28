@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 27 Lut 2023, 13:04
--- Wersja serwera: 10.4.24-MariaDB
--- Wersja PHP: 8.1.6
+-- Czas generowania: 27 Lut 2023, 14:05
+-- Wersja serwera: 10.4.13-MariaDB
+-- Wersja PHP: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -188,7 +188,11 @@ CREATE TABLE `zamówienia_info` (
 INSERT INTO `zamówienia_info` (`id`, `id_klienta`, `id_zamówienia`, `data_zamówienia`, `data_wykonania`, `cena_dostawy`) VALUES
 (1, 3, 5, '2023-02-14', '2023-02-14', 8.4),
 (2, 8, 6, '2023-02-14', '2023-02-16', 12),
-(3, 2, 10, '2023-02-17', '2023-02-24', 10);
+(3, 2, 10, '2023-02-17', '2023-02-24', 10),
+(4, 5, 9, '2023-02-17', '2023-02-17', 0),
+(5, 8, 1, '2023-02-20', NULL, 10.25),
+(6, 1, 5, '2023-02-20', '2023-02-20', 0),
+(7, 10, 6, '2023-02-28', '2023-03-02', 12.5);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -234,7 +238,7 @@ ALTER TABLE `zamówienia_info`
   ADD KEY `id_zamówienia` (`id_zamówienia`);
 
 --
--- AUTO_INCREMENT dla zrzuconych tabel
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
@@ -271,7 +275,7 @@ ALTER TABLE `zamówienia`
 -- AUTO_INCREMENT dla tabeli `zamówienia_info`
 --
 ALTER TABLE `zamówienia_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Ograniczenia dla zrzutów tabel
