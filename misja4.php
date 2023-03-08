@@ -1,18 +1,9 @@
 <?php
     session_start();
-    $cookiename = 'Sesja';
-    $cookieval = 1;
-    setcookie($cookiename,$cookieval,time() + (86400 * 30), "/");
-
-    if(!isset($_COOKIE[$cookiename])) {
-        echo "Cookie named '" . $cookiename . "' is not set!";
+    if($_SESSION['next'] != 3) {
+        echo "Nie wykonałeś poprzedniego zadania.";
     } else {
-        echo "Cookie '" . $cookiename . "' is set!<br>";
-        echo "Value is: " . $_COOKIE[$cookiename];
-    }
-?>
-
-<!DOCTYPE html>
+echo '<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,14 +12,14 @@
     <title>Document</title>
 </head>
 <body>
-    Wypisz z tabeli "klienci" imię osoby o nazwisku Słowiański.<br><br>
-    <form action="misja1.php" method="post">
+    Potrzebujesz skontaktować się z jednym z klientów. Znajdź jego numer telefonu w tabeli "klienci". Osoba której szukasz miała wykonane zamówienie 20 lutego. Użyj połączeń tabeli.<br><br>
+    <form action="misja4.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 
-    </form>
-    <?php
+    </form>';
+
     function sprobuj($qst) {
-        if ($qst != "Stanisław") {
+        if ($qst != 199267094) {
             throw new Exception("Lekka kraksa");
         }
     }
@@ -50,8 +41,8 @@
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
                 echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
-                $_SESSION['next'] = 1;
-                echo '<a href="misja2.php">Dalej</a>';
+                $_SESSION['next'] = 4;
+                echo '<a href="misja5.php">Dalej</a>';
             }
         }    
     }
@@ -60,6 +51,7 @@
     }
 
     mysqli_close($conn);
-    ?>
-</body>
-</html>
+echo '</body>
+</html>';
+    }
+?>

@@ -1,18 +1,9 @@
 <?php
     session_start();
-    $cookiename = 'Sesja';
-    $cookieval = 1;
-    setcookie($cookiename,$cookieval,time() + (86400 * 30), "/");
-
-    if(!isset($_COOKIE[$cookiename])) {
-        echo "Cookie named '" . $cookiename . "' is not set!";
+    if($_SESSION['next'] != 1) {
+        echo "Nie wykonałeś poprzedniego zadania.";
     } else {
-        echo "Cookie '" . $cookiename . "' is set!<br>";
-        echo "Value is: " . $_COOKIE[$cookiename];
-    }
-?>
-
-<!DOCTYPE html>
+echo '<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,14 +12,14 @@
     <title>Document</title>
 </head>
 <body>
-    Wypisz z tabeli "klienci" imię osoby o nazwisku Słowiański.<br><br>
-    <form action="misja1.php" method="post">
+Policz średnią wypłaty pracowników z tabeli "pracownicy" o nazwisku zaczynającym się na "K" lub "P". Wynik zaokrąglij do liczby całkowitej.<br><br>
+    <form action="misja2.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 
-    </form>
-    <?php
+    </form>';
+
     function sprobuj($qst) {
-        if ($qst != "Stanisław") {
+        if ($qst != 3202) {
             throw new Exception("Lekka kraksa");
         }
     }
@@ -50,8 +41,8 @@
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
                 echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
-                $_SESSION['next'] = 1;
-                echo '<a href="misja2.php">Dalej</a>';
+                $_SESSION['next'] = 2;
+                echo '<a href="misja3.php">Dalej</a>';
             }
         }    
     }
@@ -60,6 +51,7 @@
     }
 
     mysqli_close($conn);
-    ?>
-</body>
-</html>
+echo '</body>
+</html>';
+    }
+?>

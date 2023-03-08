@@ -1,18 +1,9 @@
 <?php
     session_start();
-    $cookiename = 'Sesja';
-    $cookieval = 1;
-    setcookie($cookiename,$cookieval,time() + (86400 * 30), "/");
-
-    if(!isset($_COOKIE[$cookiename])) {
-        echo "Cookie named '" . $cookiename . "' is not set!";
+    if($_SESSION['next'] != 4) {
+        echo "Nie wykonałeś poprzedniego zadania.";
     } else {
-        echo "Cookie '" . $cookiename . "' is set!<br>";
-        echo "Value is: " . $_COOKIE[$cookiename];
-    }
-?>
-
-<!DOCTYPE html>
+echo '<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,14 +12,14 @@
     <title>Document</title>
 </head>
 <body>
-    Wypisz z tabeli "klienci" imię osoby o nazwisku Słowiański.<br><br>
-    <form action="misja1.php" method="post">
+    Zostałeś wyznaczony do rozliczenia się z klientem. Masz za zadanie sprawdzić z tabeli "zamówienia" ile wynosi cena dostawy. Niestety zapomniałeś gdzie mieszkał klient a twoją jedyną wskazówką jest kartka z wypisanymi nazwami ulicy "Jana Sobieskiego" i "3 Maja" oraz numerami domów "33", "28", "10". Do sprawdzenia bazy danych użyj połączeń tabeli.<br><br>
+    <form action="misja.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 
-    </form>
-    <?php
+    </form>';
+
     function sprobuj($qst) {
-        if ($qst != "Stanisław") {
+        if ($qst != 12.5) {
             throw new Exception("Lekka kraksa");
         }
     }
@@ -50,8 +41,8 @@
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
                 echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
-                $_SESSION['next'] = 1;
-                echo '<a href="misja2.php">Dalej</a>';
+                $_SESSION['next'] = 5;
+                // echo '<a href="misja2.php">Dalej</a>';
             }
         }    
     }
@@ -60,6 +51,7 @@
     }
 
     mysqli_close($conn);
-    ?>
-</body>
-</html>
+echo '</body>
+</html>';
+    }
+?>
