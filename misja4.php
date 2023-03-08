@@ -1,6 +1,7 @@
 <?php
     session_start();
     if($_SESSION['next'] != 3) {
+        $_SESSION['cookieval'] = 3;
         echo "Nie wykonałeś poprzedniego zadania.";
     } else {
 echo '<!DOCTYPE html>
@@ -42,7 +43,8 @@ echo '<!DOCTYPE html>
                 sprobuj($qst[0]);
                 echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
                 $_SESSION['next'] = 4;
-                echo '<a href="misja5.php">Dalej</a>';
+                $_SESSION['cookieval'] = 4;
+                echo '<a href="cookies.php">Dalej</a>';
             }
         }    
     }
