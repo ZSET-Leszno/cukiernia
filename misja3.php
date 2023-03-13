@@ -1,9 +1,9 @@
 <?php
     session_start();
-    if($_SESSION['next'] != 2) {
-        $_SESSION['cookieval'] = 2;
+    if($_SESSION['next'] < 2) {
         echo "Nie wykonałeś poprzedniego zadania.";
     } else {
+        $_SESSION['cookieval'] = 2;
 echo '<!DOCTYPE html>
 <html lang="en">
 <head>

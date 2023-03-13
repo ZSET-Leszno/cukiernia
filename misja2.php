@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION['next'] != 1) {
+    if($_SESSION['next'] < 1) {
         echo "Nie wykonałeś poprzedniego zadania.";
     } else {
         $_SESSION['cookieval'] = 1;

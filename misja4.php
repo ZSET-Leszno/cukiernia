@@ -1,9 +1,9 @@
 <?php
     session_start();
-    if($_SESSION['next'] != 3) {
-        $_SESSION['cookieval'] = 3;
+    if($_SESSION['next'] < 3) {
         echo "Nie wykonałeś poprzedniego zadania.";
     } else {
+        $_SESSION['cookieval'] = 3;
 echo '<!DOCTYPE html>
 <html lang="en">
 <head>
