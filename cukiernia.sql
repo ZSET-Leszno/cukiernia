@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 28 Lut 2023, 10:56
+-- Czas generowania: 28 Mar 2023, 09:02
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.1.6
 
@@ -34,25 +34,24 @@ CREATE TABLE `klienci` (
   `num_tel` int(11) NOT NULL,
   `miasto` varchar(225) NOT NULL,
   `ulica` varchar(225) NOT NULL,
-  `nr_domu` int(11) NOT NULL,
-  `czy_stały` tinyint(1) NOT NULL
+  `nr_domu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Zrzut danych tabeli `klienci`
 --
 
-INSERT INTO `klienci` (`id`, `imie`, `nazwisko`, `num_tel`, `miasto`, `ulica`, `nr_domu`, `czy_stały`) VALUES
-(1, 'Kamil', 'Ślimak', 199267094, 'Garzyn', 'Kowalska', 10, 1),
-(2, 'Michał', 'Ślimak', 987654321, 'Leszno', '3 Maja', 69, 0),
-(3, 'Kamil', 'Pierwiastek', 576682359, 'Lipno', 'Jana Pawła 2', 3, 1),
-(4, 'Jadwiga', 'Kurtz', 956041295, 'Wrocław', 'Kręta', 41, 0),
-(5, 'Stanisław', 'Słowiański', 865745027, 'Leszno', 'Kwiatowa', 7, 1),
-(6, 'Kamil', 'Janowski', 761951932, 'Kąkolewo', 'Rydzyńska', 28, 0),
-(7, 'Olga', 'Czerniewicz', 955967813, 'Kościan', '3 Maja', 1, 0),
-(8, 'Stanisław', 'Kurtz', 806654375, 'Leszno', 'Jana Sobieskiego', 69, 0),
-(9, 'Anna', 'Pierwiastek', 763491278, 'Osieczna', 'Norwida', 33, 1),
-(10, 'Jan', 'Czerniewicz', 760839554, 'Wrocław', 'Jana Sobieskiego', 28, 1);
+INSERT INTO `klienci` (`id`, `imie`, `nazwisko`, `num_tel`, `miasto`, `ulica`, `nr_domu`) VALUES
+(1, 'Kamil', 'Ślimak', 199267094, 'Garzyn', 'Kowalska', 10),
+(2, 'Michał', 'Ślimak', 987654321, 'Leszno', '3 Maja', 69),
+(3, 'Kamil', 'Pierwiastek', 576682359, 'Lipno', 'Jana Pawła 2', 3),
+(4, 'Jadwiga', 'Kurtz', 956041295, 'Wrocław', 'Kręta', 41),
+(5, 'Stanisław', 'Słowiański', 865745027, 'Leszno', 'Kwiatowa', 7),
+(6, 'Kamil', 'Janowski', 761951932, 'Kąkolewo', 'Rydzyńska', 28),
+(7, 'Olga', 'Czerniewicz', 955967813, 'Kościan', '3 Maja', 1),
+(8, 'Stanisław', 'Kurtz', 806654375, 'Leszno', 'Jana Sobieskiego', 69),
+(9, 'Anna', 'Pierwiastek', 763491278, 'Osieczna', 'Norwida', 33),
+(10, 'Jan', 'Czerniewicz', 760839554, 'Wrocław', 'Jana Sobieskiego', 28);
 
 -- --------------------------------------------------------
 
