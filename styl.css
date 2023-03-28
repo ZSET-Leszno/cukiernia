@@ -235,7 +235,7 @@ a.button5{
     animation-fill-mode: forwards;
   }
   .css-typing p:nth-child(10) {
-    width: 40em;
+    width: 42em;
     opacity: 0;
     -webkit-animation: type3 5s steps(160, end);
     animation: type3 5s steps(160, end);
@@ -340,12 +340,6 @@ a.button5{
 
   #mission-button:hover {
     background-color:rgb(0, 226, 19);
-  }
-  
-  @keyframes blink {
-    50% {
-      opacity: 0.5;
-    }
   }
 
   @keyframes fadeIn {
