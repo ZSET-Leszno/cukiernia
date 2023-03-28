@@ -10,7 +10,8 @@ echo '<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Misja piąta</title>
+    <link rel="stylesheet" href="misje.css">
 </head>
 <body>
     Zostałeś wyznaczony do rozliczenia się z klientem. Masz za zadanie sprawdzić z tabeli "zamówienia" ile wynosi cena dostawy. Niestety zapomniałeś gdzie mieszkał klient a twoją jedyną wskazówką jest kartka z wypisanymi nazwami ulicy "Jana Sobieskiego" i "3 Maja" oraz numerami domów "33", "28", "10". Do sprawdzenia bazy danych użyj połączeń tabeli.<br><br>

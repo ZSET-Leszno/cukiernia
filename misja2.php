@@ -10,7 +10,8 @@ echo '<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Misja druga</title>
+    <link rel="stylesheet" href="misje.css">
 </head>
 <body>
 Policz średnią wypłaty pracowników z tabeli "pracownicy" o nazwisku zaczynającym się na "K" lub "P". Wynik zaokrąglij do liczby całkowitej.<br><br>
