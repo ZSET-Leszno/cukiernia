@@ -20,7 +20,7 @@ echo '<!DOCTYPE html>
     </form>';
 
     function sprobuj($qst) {
-        if ($qst != 12.5) {
+        if ($qst != 12.59) {
             throw new Exception("Lekka kraksa");
         }
     }
