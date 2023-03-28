@@ -13,7 +13,14 @@
     <link rel="stylesheet" href="misje.css">
 </head>
 <body>
-    Wypisz z tabeli "klienci" imię osoby o nazwisku Słowiański.<br><br>
+    <div class="fade-in">
+        Dostałeś zlecenie na zhackowanie ocen z języka w dzienniku elektronicznym. Muszę
+        sprawdzić czy nadajesz się do tego zadania.
+    </div><br>
+    <div class="fade-in2">
+        Wypisz z tabeli "klienci" imię osoby o nazwisku Słowiański.
+    </div><br><br>
+    
     <form action="misja1.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 

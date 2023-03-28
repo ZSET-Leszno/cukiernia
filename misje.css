@@ -6,12 +6,17 @@
   }
   
   body {
+    height: calc(100vh - 8em);
+    padding: 4em;
+    color: rgba(255,255,255,.75);
     font-family: 'Anonymous Pro', monospace;
-    font-size: 16px;
-    line-height: 1.5;
-    background-color: #f2f2f2;
-    color: #333;
-    padding: 20px;
+    text-align: center; 
+    background-image: url(bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 22px;
   }
   
   h1 {
@@ -74,4 +79,26 @@
   a:hover {
     color: #3e8e41;
   }
+
+  /* Animacje */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 0.5s;
+}
+
+.fade-in2 {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
   

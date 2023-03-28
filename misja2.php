@@ -42,7 +42,7 @@ Policz średnią wypłaty pracowników z tabeli "pracownicy" o nazwisku zaczynaj
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
+                echo '<br>Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
                 $_SESSION['next'] = 2;
                 $_SESSION['cookieval'] = 2;
                 echo '<a href="cookies.php">Dalej</a>';
@@ -50,7 +50,7 @@ Policz średnią wypłaty pracowników z tabeli "pracownicy" o nazwisku zaczynaj
         }    
     }
     catch (Exception $error) {
-        echo 'Wystąpił błąd, spróbuj ponownie';
+        echo '<br>Wystąpił błąd, spróbuj ponownie';
     }
 
     mysqli_close($conn);
