@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona główna</title>
+    <title>Opis misji</title>
     <link rel="stylesheet" href="styl.css">
 </head>
 <body>
-    <div class="css-typing">
-        <p>
-          <b>Opis misji</b>
+    <button id="skip-animation">Pomiń</button>
+    <div class="css-typing css-typing-container">
+        <p style="font-size: 20px;">
+        Opis misji
         </p>
-        <p style="font-size: 14px">
+        <p style="font-size: 24px">
           <b>Operacja <i>"Vulcan"</i></b>
         </p>
         <p>
@@ -35,6 +36,48 @@
             Problem w tym, że Pan od informatyki nie przyjmuje
             tego faktu do wiadomości!
         </p>
+        <p>
+            Niestety tak niska ocena uniemożliwi przyszłemu maturzyście
+            dostanie się na wymarzone studia.
+        </p>
+        <p>
+            <b>Zdesperowany, przyszły student już wie, że nie może liczyć
+            na łagodne rozwiązanie tego problemu i postanawia wziąć sprawy w swoje ręce.</b>
+        </p>
+        <p>
+            Choć nie
+            pochwala takich metod, to zawiera z nauczycielem prowadzącym układ:
+        </p>
+        <p>
+            jeśli uda mu się
+            samodzielnie zmienić ocenę w dzienniku, nauczyciel wstawi ostatecznie ocenę celującą.
+        </p>
+        <p>
+            Niestety Szymon nieco przecenił swoje możliwości, więc postanawia zlecić to zadanie komuś
+            bardziej zorientowanemu w temacie.
+        </p>
+        <p style="font-size: 30px;">
+            <b>Sprawdź, czy nadajesz się do tej roboty...</b>
+        </p>
       </div>
+      <div class="wrapper">
+        <a href="cookies.php">
+            <button class="green-btn" id="mission-button">Przejdź do misji 1</button>
+        </a>
+      </div>
+
+<script>
+const skipBtn = document.getElementById('skip-animation');
+const missionButton = document.getElementById('mission-button');
+const container = document.querySelector('.css-typing-container');
+
+skipBtn.addEventListener('click', function() {
+  container.classList.add('skip-animation');
+  missionButton.style.animation = 'none';
+  missionButton.style.animationDelay = '0s';
+  missionButton.style.transition = 'opacity 0s';
+  missionButton.style.opacity = '1';
+});
+</script>
 </body>
 </html>
