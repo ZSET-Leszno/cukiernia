@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION['next'] != 4) {
+    if($_SESSION['next'] != 5) {
         echo "Nie wykonałeś poprzedniego zadania.";
     } else {
 echo '<!DOCTYPE html>
@@ -12,14 +12,14 @@ echo '<!DOCTYPE html>
     <title>Document</title>
 </head>
 <body>
-    Zostałeś wyznaczony do rozliczenia się z klientem. Masz za zadanie sprawdzić z tabeli "zamówienia" ile wynosi cena dostawy. Niestety zapomniałeś gdzie mieszkał klient a twoją jedyną wskazówką jest kartka z wypisanymi nazwami ulicy "Jana Sobieskiego" i "3 Maja" oraz numerami domów "33", "28", "10". Do sprawdzenia bazy danych użyj połączeń tabeli.<br><br>
+Znajdź miasto klienta mieszkającego na ul. 3 maja, który nigdy nie złozył zamówienia online.<br><br>
     <form action="misja.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 
     </form>';
 
     function sprobuj($qst) {
-        if ($qst != 12.5) {
+        if ($qst != "Kościan") {
             throw new Exception("Lekka kraksa");
         }
     }
@@ -41,8 +41,8 @@ echo '<!DOCTYPE html>
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
                 echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
-                $_SESSION['next'] = 5;
-                echo '<a href="misja2.php">Dalej</a>';
+                $_SESSION['next'] = 6;
+                // echo '<a href="misja2.php">Dalej</a>';
             }
         }    
     }
