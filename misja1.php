@@ -1,15 +1,6 @@
 <?php
     session_start();
-    $cookiename = 'Sesja';
-    $cookieval = 1;
-    setcookie($cookiename,$cookieval,time() + (86400 * 30), "/");
-
-    if(!isset($_COOKIE[$cookiename])) {
-        echo "Cookie named '" . $cookiename . "' is not set!";
-    } else {
-        echo "Cookie '" . $cookiename . "' is set!<br>";
-        echo "Value is: " . $_COOKIE[$cookiename];
-    }
+    $_SESSION['cookieval'] = 0;
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +42,8 @@
                 sprobuj($qst[0]);
                 echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
                 $_SESSION['next'] = 1;
-                echo '<a href="misja2.php">Dalej</a>';
+                $_SESSION['cookieval'] = 1;
+                echo '<a href="cookies.php">Dalej</a>';
             }
         }    
     }

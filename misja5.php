@@ -1,8 +1,9 @@
 <?php
     session_start();
-    if($_SESSION['next'] != 4) {
+    if($_SESSION['next'] < 4) {
         echo "Nie wykonałeś poprzedniego zadania.";
     } else {
+        $_SESSION['cookieval'] = 4;
 echo '<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@ echo '<!DOCTYPE html>
 </head>
 <body>
     Zostałeś wyznaczony do rozliczenia się z klientem. Masz za zadanie sprawdzić z tabeli "zamówienia" ile wynosi cena dostawy. Niestety zapomniałeś gdzie mieszkał klient a twoją jedyną wskazówką jest kartka z wypisanymi nazwami ulicy "Jana Sobieskiego" i "3 Maja" oraz numerami domów "33", "28", "10". Do sprawdzenia bazy danych użyj połączeń tabeli.<br><br>
-    <form action="misja.php" method="post">
+    <form action="misja5.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 
     </form>';

@@ -1,8 +1,9 @@
 <?php
     session_start();
-    if($_SESSION['next'] != 1) {
+    if($_SESSION['next'] < 1) {
         echo "Nie wykonałeś poprzedniego zadania.";
     } else {
+        $_SESSION['cookieval'] = 1;
 echo '<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +43,8 @@ Policz średnią wypłaty pracowników z tabeli "pracownicy" o nazwisku zaczynaj
                 sprobuj($qst[0]);
                 echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
                 $_SESSION['next'] = 2;
-                echo '<a href="misja3.php">Dalej</a>';
+                $_SESSION['cookieval'] = 2;
+                echo '<a href="cookies.php">Dalej</a>';
             }
         }    
     }
