@@ -2,7 +2,7 @@ html{
     min-height: 100%;
     overflow: hidden;
   }
-  body{
+body{
     height: calc(100vh - 8em);
     padding: 4em;
     color: rgba(255,255,255,.75);
@@ -14,7 +14,22 @@ html{
     background-size: cover;
   }
 
-  .line-1{
+button {
+  font-size: 24px;
+  background-color: green;
+  border: none;
+  font-family: 'Anonymous Pro', monospace;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: rgb(0, 226, 19);
+}
+
+.line-1{
     position: relative;
     top: 50%;  
     width: 24em;
@@ -117,21 +132,18 @@ a.button5{
   }
 
 
-
-
-
   .css-typing p {
     border-right: .15em solid orange;
     font-family: "Anonymous-Pro", monospace;
-    font-size: 16px;
+    font-size: 22px;
     white-space: nowrap;
     overflow: hidden;
     color: rgb(31, 231, 31)
   }
   .css-typing p:nth-child(1) {
     width: 5.5em;
-    -webkit-animation: type 2s steps(25, end);
-    animation: type 2s steps(25, end);
+    -webkit-animation: type3 2s steps(25, end);
+    animation: type3 2s steps(25, end);
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
@@ -139,8 +151,8 @@ a.button5{
   .css-typing p:nth-child(2) {
     width: 10em;
     opacity: 0;
-    -webkit-animation: type2 2s steps(28, end);
-    animation: type2 2s steps(28, end);
+    -webkit-animation: type3 2s steps(28, end);
+    animation: type3 2s steps(28, end);
     -webkit-animation-delay: 2s;
     animation-delay: 2s;
     -webkit-animation-fill-mode: forwards;
@@ -201,60 +213,73 @@ a.button5{
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
-  @keyframes type {
-    0% {
-      width: 0;
-    }
-    99.9% {
-      border-right: .15em solid orange;
-    }
-    100% {
-      border: none;
-    }
+
+  .css-typing p:nth-child(8) {
+    width: 51.5em;
+    opacity: 0;
+    -webkit-animation: type3 6s steps(110, end);
+    animation: type3 6s steps(110, end);
+    -webkit-animation-delay: 38.5s;
+    animation-delay: 38.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
   }
-  
-  @-webkit-keyframes type {
-    0% {
-      width: 0;
-    }
-    99.9% {
-      border-right: .15em solid orange;
-    }
-    100% {
-      border: none;
-    }
+  .css-typing p:nth-child(9) {
+    width: 75em;
+    opacity: 0;
+    -webkit-animation: type3 6s steps(135, end);
+    animation: type3 6s steps(135, end);
+    -webkit-animation-delay: 44.5s;
+    animation-delay: 44.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
   }
-  
-  @keyframes type2 {
-    0% {
-      width: 0;
-    }
-    1% {
-      opacity: 1;
-    }
-    99.9% {
-      border-right: .15em solid orange;
-    }
-    100% {
-      opacity: 1;
-      border: none;
-    }
+  .css-typing p:nth-child(10) {
+    width: 40em;
+    opacity: 0;
+    -webkit-animation: type3 5s steps(160, end);
+    animation: type3 5s steps(160, end);
+    -webkit-animation-delay: 50.5s;
+    animation-delay: 50.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
   }
-  
-  @-webkit-keyframes type2 {
-    0% {
-      width: 0;
-    }
-    1% {
-      opacity: 1;
-    }
-    99.9% {
-      border-right: .15em solid orange;
-    }
-    100% {
-      opacity: 1;
-      border: none;
-    }
+  .css-typing p:nth-child(11) {
+    width: 56em;
+    opacity: 0;
+    -webkit-animation: type3 5s steps(160, end);
+    animation: type3 5s steps(160, end);
+    -webkit-animation-delay: 55.5s;
+    animation-delay: 55.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  .css-typing p:nth-child(12) {
+    width: 68em;
+    opacity: 0;
+    -webkit-animation: type3 5s steps(160, end);
+    animation: type3 5s steps(160, end);
+    -webkit-animation-delay: 61.5s;
+    animation-delay: 61.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  .css-typing p:nth-child(13) {
+    width: 25em;
+    opacity: 0;
+    -webkit-animation: type3 2s steps(70, end);
+    animation: type3 2s steps(70, end);
+    -webkit-animation-delay: 66.5s;
+    animation-delay: 66.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+
+
+  .css-typing-container.skip-animation p {
+    animation: none !important;
+    opacity: 1 !important;
+    border: none !important;
   }
   
   @keyframes type3 {
@@ -289,38 +314,6 @@ a.button5{
     }
   }
 
-  @keyframes type4 {
-    0% {
-      width: 0;
-    }
-    1% {
-      opacity: 1;
-    }
-    99.9% {
-      border-right: .15em solid orange;
-    }
-    100% {
-      opacity: 1;
-      border: none;
-    }
-  }
-  
-  @-webkit-keyframes type4 {
-    0% {
-      width: 0;
-    }
-    1% {
-      opacity: 1;
-    }
-    99.9% {
-      border-right: .15em solid orange;
-    }
-    100% {
-      opacity: 1;
-      border: none;
-    }
-  }
-  
   @keyframes blink {
     50% {
       border-color: transparent;
@@ -331,3 +324,36 @@ a.button5{
       border-color: tranparent;
     }
   }
+
+  /* przycisk */
+  #mission-button {
+    font-size: 24px;
+    font-family: 'Anonymous Pro', monospace;
+    color: white;
+    background-color: green;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    animation: fadeIn 1s ease-out 68.5s forwards;
+    opacity: 0;
+  }
+
+  #mission-button:hover {
+    background-color:rgb(0, 226, 19);
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
