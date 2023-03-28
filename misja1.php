@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="fade-in">
-        Dostałeś zlecenie na zhackowanie ocen z języka w dzienniku elektronicznym. Muszę
+        Dostałeś zlecenie na zhackowanie ocen z informatyki w dzienniku elektronicznym. Muszę
         sprawdzić czy nadajesz się do tego zadania.
     </div><br>
     <div class="fade-in2">
