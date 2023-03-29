@@ -14,7 +14,13 @@ echo '<!DOCTYPE html>
     <link rel="stylesheet" href="misje.css">
 </head>
 <body>
-Policz średnią wypłaty pracowników z tabeli "pracownicy" o nazwisku zaczynającym się na "K" lub "P". Wynik zaokrąglij do liczby całkowitej.<br><br>
+    <div class="fade-in">
+    Brawo, pierwszy test za Tobą. Teraz drugi.<br><br>
+    </div>
+    <div class="fade-in2">
+    Sprawdź ile osób jest fanem Shreka. Policz rekordy z tabeli &quot;szczegóły&quot; w których
+    zawartość posiada &quot;Tort Shrek&quot;. Użyj połączeń tabel.<br><br>
+    </div>
     <form action="misja2.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 
@@ -42,7 +48,7 @@ Policz średnią wypłaty pracowników z tabeli "pracownicy" o nazwisku zaczynaj
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                echo '<br>Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
+                echo '<br><br>Świetnie, widzę, że nadajesz się do tej roboty<br><br>';
                 $_SESSION['next'] = 2;
                 $_SESSION['cookieval'] = 2;
                 echo '<a href="cookies.php">Dalej</a>';
@@ -50,7 +56,7 @@ Policz średnią wypłaty pracowników z tabeli "pracownicy" o nazwisku zaczynaj
         }    
     }
     catch (Exception $error) {
-        echo '<br>Wystąpił błąd, spróbuj ponownie';
+        echo '<br><br>Wystąpił błąd, spróbuj ponownie';
     }
 
     mysqli_close($conn);

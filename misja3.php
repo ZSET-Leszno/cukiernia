@@ -14,7 +14,14 @@ echo '<!DOCTYPE html>
     <link rel="stylesheet" href="misje.css">
 </head>
 <body>
-    Sprawdź ile osób jest fanem Shreka. Policz rekordy z tabeli "szczegóły" w których zawartość posiada "Tort Shrek". Użyj połączeń tabel.<br><br>
+    <div class="fade-in">
+        Szkoła jest podłączona do systemu alarmowego. Aby wejść i podłączyć się do sieci lokalnej,
+        musisz wpisać kod rozbrajający alarm. Cyfry składające się na kod alarmu są wynikiem
+        zapytanie:
+    </div>
+    <div class="fade-in2">
+        Policz średnią wypłaty pracowników z tabeli "pracownicy" o nazwisku zaczynającym się na "K" lub "P". Wynik zaokrąglij do liczby całkowitej.<br><br>
+    </div>
     <form action="misja3.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 
