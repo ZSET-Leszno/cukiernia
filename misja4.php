@@ -32,11 +32,18 @@ echo '<!DOCTYPE html>
     <link rel="stylesheet" href="misje.css">
 </head>
 <body>
-    Potrzebujesz skontaktować się z jednym z klientów. Znajdź jego numer telefonu w tabeli "klienci". Osoba której szukasz miała wykonane zamówienie 20 lutego. Użyj połączeń tabeli.<br><br>
+    <div class="fade-in">
+        Musisz udać się do serwerowni. Numer pomieszczenia, w którym się ona znajduje jest
+        wynikiem zapytania:<br><br>
+    </div>
+    <div class="fade-in2">
+        Policz ile produktów zostało zamówionych których rodzajem jest
+        &quot;ciastko&quot;<br><br>
+    </div>
     <form action="misja4.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 
-    </form>';
+    </form><br><br>';
 
     function sprobuj($qst) {
         if ($qst != 199267094) {
@@ -60,7 +67,7 @@ echo '<!DOCTYPE html>
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
+                echo 'Brawo, znalazłeś pomieszczenie serwerowni.<br><br>';
                 $_SESSION['next'] = 4;
                 $_SESSION['cookieval'] = 4;
                 echo '<a href="cookies.php">Dalej</a>';

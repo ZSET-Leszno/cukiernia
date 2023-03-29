@@ -42,7 +42,7 @@ echo '<!DOCTYPE html>
     <form action="misja2.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 
-    </form>';
+    </form><br><br>';
 
     function sprobuj($qst) {
         if ($qst != 3202) {

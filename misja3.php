@@ -34,8 +34,7 @@ echo '<!DOCTYPE html>
 <body>
     <div class="fade-in">
         Szkoła jest podłączona do systemu alarmowego. Aby wejść i podłączyć się do sieci lokalnej,
-        musisz wpisać kod rozbrajający alarm. Cyfry składające się na kod alarmu są wynikiem
-        zapytania:<br><br>
+        musisz wpisać kod rozbrajający alarm. Cyfry składające się na kod alarmu zdobędziesz wykonując to zadanie:<br><br>
     </div>
     <div class="fade-in2">
         Policz średnią wypłaty pracowników z tabeli "pracownicy" o nazwisku zaczynającym się na "K" lub "P". Wynik zaokrąglij do liczby całkowitej.<br><br>
@@ -43,7 +42,7 @@ echo '<!DOCTYPE html>
     <form action="misja3.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 
-    </form>';
+    </form><br><br>';
 
     function sprobuj($qst) {
         if ($qst != 3) {
@@ -67,7 +66,7 @@ echo '<!DOCTYPE html>
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
+                echo 'Pin się zgadza :)<br><br>';
                 $_SESSION['next'] = 3;
                 $_SESSION['cookieval'] = 3;
                 echo '<a href="cookies.php">Dalej</a>';

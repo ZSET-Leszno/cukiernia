@@ -32,11 +32,18 @@ echo '<!DOCTYPE html>
     <link rel="stylesheet" href="misje.css">
 </head>
 <body>
-    Zostałeś wyznaczony do rozliczenia się z klientem. Masz za zadanie sprawdzić z tabeli "zamówienia" ile wynosi cena dostawy. Niestety zapomniałeś gdzie mieszkał klient a twoją jedyną wskazówką jest kartka z wypisanymi nazwami ulicy "Jana Sobieskiego" i "3 Maja" oraz numerami domów "33", "28", "10". Do sprawdzenia bazy danych użyj połączeń tabeli.<br><br>
-    <form action="misja5.php" method="post">
+    <div class="fade-in">
+        Jesteś już w środku. Teraz wystarczy włamać się do systemu operacyjnego, który
+        zabezpieczony jest hasłem. Hasło jest wynikiem zapytania:<br><br>
+    </div>
+    <div class="fade-in2">
+        Znajdź miasto klienta
+        mieszkającego na ul. 3 maja, który nigdy nie złożył zamówienia online.<br><br>
+    </div>
+    <form action="misja6.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 
-    </form>';
+    </form><br><br>';
 
     function sprobuj($qst) {
         if ($qst != 12.59) {
@@ -60,9 +67,9 @@ echo '<!DOCTYPE html>
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
+                echo 'Super! Przed Tobą ostatni krok.<br><br>';
                 $_SESSION['next'] = 6;
-                //echo '<a href="misja2.php">Dalej</a>';
+                echo '<a href="cookies.php">Dalej</a>';
             }
         }    
     }

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION['next'] < 4) {
+    if($_SESSION['next'] < 6) {
         echo '<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -15,13 +15,13 @@
             Nie wykonałeś poprzedniego zadania.<br><br>
         </div>
         <div class="fade-in2">
-            <a href="misja4.php">
+            <a href="misja6.php">
                 <button id="back">Powrót</button>
             </a>
         </div>
         </body>';
     } else {
-        $_SESSION['cookieval'] = 4;
+        $_SESSION['cookieval'] = 6;
 echo '<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,16 +33,16 @@ echo '<!DOCTYPE html>
 </head>
 <body>
     <div class="fade-in">
-        Niestety, drzwi do serwerowni są zamknięte zamkiem
-        elektronicznym. Aby otworzyć drzwi należy podać kod PIN, który jest wynikiem zapytania:<br><br>
+        Musisz dostać się do dziennika elektronicznego. Wiemy, że
+        nauczyciel do logowania używa maila <b>informatyk@fajna-szkola.pl</b>. Teraz należy podać hasło,
+        które jest wynikiem zapytania:<br><br>
     </div>
     <div class="fade-in2">
-        Zostałeś wyznaczony do rozliczenia się z klientem. Masz za zadanie sprawdzić z tabeli
-        &quot;zamówienia&quot; ile wynosi cena dostawy. Niestety zapomniałeś gdzie mieszkał klient a twoją
-        jedyną wskazówką jest kartka z wypisanymi nazwami ulicy &quot;Jana Sobieskiego&quot; i &quot;3 Maja&quot;
-        oraz numerami domów &quot;33&quot;, &quot;28&quot;, &quot;10&quot;. Do sprawdzenia bazy danych użyj połączeń tabeli.<br><br>
+        Musisz skontaktować się z jednym z klientów. Znajdź jego
+        numer telefonu w tabeli &quot;klienci&quot;. Osoba której szukasz miała wykonane zamówienie 20
+        lutego. Użyj połączeń tabeli.<br><br>
     </div>
-    <form action="misja5.php" method="post">
+    <form action="misja7.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 
     </form><br><br>';
@@ -69,9 +69,14 @@ echo '<!DOCTYPE html>
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
-                $_SESSION['next'] = 5;
-                echo '<a href="cookies.php">Dalej</a>';
+                echo '<div class="fade-in">
+                    <p style="font-size: 24px;"><b>GRATULACJE!!</b></p>
+                </div><br><br>
+                <div class="fade-in2">
+                    <p style="font-size: 16px;">Udało Ci się zmienić ocenę w dzienniku. Dzięki Tobie Szymon będzie mógł pójść na
+                    wymarzone studia.</p>';
+                $_SESSION['next'] = 7;
+                //echo '<a href="misja2.php">Dalej</a>';
             }
         }    
     }

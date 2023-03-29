@@ -24,7 +24,7 @@
     <form action="misja1.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 
-    </form>
+    </form><br><br>
     <?php
     function sprobuj($qst) {
         if ($qst != "Stanisław") {
