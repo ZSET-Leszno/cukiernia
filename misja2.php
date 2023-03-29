@@ -45,7 +45,7 @@ echo '<!DOCTYPE html>
     </form><br><br>';
 
     function sprobuj($qst) {
-        if ($qst != 3202) {
+        if ($qst != 3) {
             throw new Exception("Lekka kraksa");
         }
     }
