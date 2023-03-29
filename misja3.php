@@ -1,7 +1,25 @@
 <?php
     session_start();
     if($_SESSION['next'] < 2) {
-        echo "Nie wykonałeś poprzedniego zadania.";
+        echo '<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Misja trzecia</title>
+            <link rel="stylesheet" href="misje.css">
+        </head>
+        <body>
+        <div class="fade-in">
+            Nie wykonałeś poprzedniego zadania.<br><br>
+        </div>
+        <div class="fade-in2">
+            <a href="misja2.php">
+                <button id="back">Powrót</button>
+            </a>
+        </div>
+        </body>';
     } else {
         $_SESSION['cookieval'] = 2;
 echo '<!DOCTYPE html>
@@ -17,7 +35,7 @@ echo '<!DOCTYPE html>
     <div class="fade-in">
         Szkoła jest podłączona do systemu alarmowego. Aby wejść i podłączyć się do sieci lokalnej,
         musisz wpisać kod rozbrajający alarm. Cyfry składające się na kod alarmu są wynikiem
-        zapytanie:
+        zapytania:<br><br>
     </div>
     <div class="fade-in2">
         Policz średnią wypłaty pracowników z tabeli "pracownicy" o nazwisku zaczynającym się na "K" lub "P". Wynik zaokrąglij do liczby całkowitej.<br><br>
