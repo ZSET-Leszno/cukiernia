@@ -44,7 +44,7 @@ echo '<!DOCTYPE html>
                 sprobuj($qst[0]);
                 echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
                 $_SESSION['next'] = 5;
-                echo '<a href="misja2.php">Dalej</a>';
+                echo '<a href="cookies.php">Dalej</a>';
             }
         }    
     }

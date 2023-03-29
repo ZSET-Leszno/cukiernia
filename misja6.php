@@ -1,26 +1,27 @@
 <?php
     session_start();
-    if($_SESSION['next'] != 5) {
+    if($_SESSION['next'] < 5) {
         echo "Nie wykonałeś poprzedniego zadania.";
     } else {
+        $_SESSION['cookieval'] = 5;
 echo '<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misja szósta</title>
+    <title>Misja piąta</title>
     <link rel="stylesheet" href="misje.css">
 </head>
 <body>
-Znajdź miasto klienta mieszkającego na ul. 3 maja, który nigdy nie złozył zamówienia online.<br><br>
-    <form action="misja.php" method="post">
+    Zostałeś wyznaczony do rozliczenia się z klientem. Masz za zadanie sprawdzić z tabeli "zamówienia" ile wynosi cena dostawy. Niestety zapomniałeś gdzie mieszkał klient a twoją jedyną wskazówką jest kartka z wypisanymi nazwami ulicy "Jana Sobieskiego" i "3 Maja" oraz numerami domów "33", "28", "10". Do sprawdzenia bazy danych użyj połączeń tabeli.<br><br>
+    <form action="misja5.php" method="post">
         <textarea name="quest" required></textarea><br>
         <input type="submit" value="Wyślij"> 
     </form>';
 
     function sprobuj($qst) {
-        if ($qst != "Kościan") {
+        if ($qst != 12.59) {
             throw new Exception("Lekka kraksa");
         }
     }
@@ -43,7 +44,7 @@ Znajdź miasto klienta mieszkającego na ul. 3 maja, który nigdy nie złozył z
                 sprobuj($qst[0]);
                 echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
                 $_SESSION['next'] = 6;
-                // echo '<a href="misja2.php">Dalej</a>';
+                //echo '<a href="misja2.php">Dalej</a>';
             }
         }    
     }
