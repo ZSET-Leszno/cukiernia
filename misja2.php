@@ -32,17 +32,25 @@ echo '<!DOCTYPE html>
     <link rel="stylesheet" href="misje.css">
 </head>
 <body>
-    <div class="fade-in">
-    Brawo, pierwszy test za Tobą. Teraz drugi.<br><br>
-    </div>
-    <div class="fade-in2">
-    Sprawdź ile osób jest fanem Shreka. Policz rekordy z tabeli &quot;szczegóły&quot; w których
-    zawartość posiada &quot;Tort Shrek&quot;. Użyj połączeń tabel.<br><br>
-    </div>
-    <form action="misja2.php" method="post">
-        <textarea name="quest" required></textarea><br>
-        <input type="submit" value="Wyślij"> 
-    </form><br><br>';
+    <div id="container">
+        <div id="main-1">
+            <div class="fade-in">
+            Brawo, pierwszy test za Tobą. Teraz drugi.<br><br>
+            </div>
+            <div class="fade-in2">
+            Sprawdź ile osób jest fanem Shreka. Policz rekordy z tabeli &quot;szczegóły&quot; w których
+            zawartość posiada &quot;Tort Shrek&quot;. Użyj połączeń tabel.<br><br>
+            </div>
+            <form action="misja2.php" method="post">
+                <textarea name="quest" required></textarea><br>
+                <input type="submit" value="Wyślij"> 
+            </form><br><br>
+        </div>
+        <div id="main-2">
+            <p class="fade-in">Struktura bazy danych</p><br><br>
+            <img src="baza.PNG" class="fade-in2">
+        </div>
+    </div>';
 
     function sprobuj($qst) {
         if ($qst != 3) {
@@ -66,7 +74,7 @@ echo '<!DOCTYPE html>
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                echo '<br><br>Świetnie, widzę, że nadajesz się do tej roboty<br><br>';
+                echo '<p style="margin-top: 3.5rem; color: rgb(81, 255, 0);">Świetnie, widzę, że nadajesz się do tej roboty</p><br><br>';
                 $_SESSION['next'] = 2;
                 $_SESSION['cookieval'] = 2;
                 echo '<a href="cookies.php">Dalej</a>';

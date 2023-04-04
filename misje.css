@@ -92,6 +92,21 @@
     color: #3e8e41;
   }
 
+  #container {
+    display: flex;
+
+  }
+
+  #main-1 {
+    width: 60%;
+    float: left;
+    margin-right: 3rem;
+  }
+
+  #main-2 {
+    width: 40%;
+  }
+
   /* Animacje */
   .fade-in {
     opacity: 0;
@@ -103,6 +118,8 @@
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
     animation-delay: 1.5s;
+    font-weight: bold;
+    color: rgb(81, 255, 0);
 }
 
 @keyframes fadeIn {
@@ -113,4 +130,3 @@
         opacity: 1;
     }
 }
-  

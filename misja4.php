@@ -32,18 +32,26 @@ echo '<!DOCTYPE html>
     <link rel="stylesheet" href="misje.css">
 </head>
 <body>
-    <div class="fade-in">
-        Musisz udać się do serwerowni. Numer pomieszczenia, w którym się ona znajduje jest
-        wynikiem zapytania:<br><br>
-    </div>
-    <div class="fade-in2">
-        Policz ile produktów zostało zamówionych których rodzajem jest
-        &quot;ciastko&quot;<br><br>
-    </div>
-    <form action="misja4.php" method="post">
-        <textarea name="quest" required></textarea><br>
-        <input type="submit" value="Wyślij"> 
-    </form><br><br>';
+    <div id="container">
+        <div id="main-1">
+            <div class="fade-in">
+                Musisz udać się do serwerowni. Numer pomieszczenia, w którym się ona znajduje jest
+                wynikiem zapytania:<br><br>
+            </div>
+            <div class="fade-in2">
+                Policz ile produktów zostało zamówionych których rodzajem jest
+                &quot;ciastko&quot;<br><br>
+            </div>
+            <form action="misja4.php" method="post">
+                <textarea name="quest" required></textarea><br>
+                <input type="submit" value="Wyślij"> 
+            </form><br><br>
+        </div>
+        <div id="main-2">
+            <p class="fade-in">Struktura bazy danych</p><br><br>
+            <img src="baza.PNG" class="fade-in2">
+        </div>
+    </div>';
 
     function sprobuj($qst) {
         if ($qst != 3) {
@@ -67,7 +75,7 @@ echo '<!DOCTYPE html>
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                echo 'Brawo, znalazłeś pomieszczenie serwerowni.<br><br>';
+                echo '<p style="margin-top: 3.5rem; color: rgb(81, 255, 0);">Brawo, znalazłeś pomieszczenie serwerowni.<br>';
                 $_SESSION['next'] = 4;
                 $_SESSION['cookieval'] = 4;
                 echo '<a href="cookies.php">Dalej</a>';

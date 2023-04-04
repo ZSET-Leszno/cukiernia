@@ -32,17 +32,25 @@ echo '<!DOCTYPE html>
     <link rel="stylesheet" href="misje.css">
 </head>
 <body>
-    <div class="fade-in">
-        Szkoła jest podłączona do systemu alarmowego. Aby wejść i podłączyć się do sieci lokalnej,
-        musisz wpisać kod rozbrajający alarm. Cyfry składające się na kod alarmu zdobędziesz wykonując to zadanie:<br><br>
-    </div>
-    <div class="fade-in2">
-        Policz średnią wypłaty pracowników z tabeli "pracownicy" o nazwisku zaczynającym się na "K" lub "P". Wynik zaokrąglij do liczby całkowitej.<br><br>
-    </div>
-    <form action="misja3.php" method="post">
-        <textarea name="quest" required></textarea><br>
-        <input type="submit" value="Wyślij"> 
-    </form><br><br>';
+    <div id="container">
+        <div id="main-1">
+            <div class="fade-in">
+                Szkoła jest podłączona do systemu alarmowego. Aby wejść i podłączyć się do sieci lokalnej,
+                musisz wpisać kod rozbrajający alarm. Cyfry składające się na kod alarmu zdobędziesz wykonując to zadanie:<br><br>
+            </div>
+            <div class="fade-in2">
+                Policz średnią wypłaty pracowników z tabeli "pracownicy" o nazwisku zaczynającym się na "K" lub "P". Wynik zaokrąglij do liczby całkowitej.<br><br>
+            </div>
+            <form action="misja3.php" method="post">
+                <textarea name="quest" required></textarea><br>
+                <input type="submit" value="Wyślij"> 
+            </form><br><br>
+        </div>
+        <div id="main-2">
+            <p class="fade-in">Struktura bazy danych</p><br><br>
+            <img src="baza.PNG" class="fade-in2">
+        </div>
+    </div>';
 
     function sprobuj($qst) {
         if ($qst != 3202) {
@@ -66,7 +74,7 @@ echo '<!DOCTYPE html>
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                echo 'Pin się zgadza :)<br><br>';
+                echo '<p style="margin-top: 3.5rem; color: rgb(81, 255, 0);">Pin się zgadza :)</p><br><br>';
                 $_SESSION['next'] = 3;
                 $_SESSION['cookieval'] = 3;
                 echo '<a href="cookies.php">Dalej</a>';

@@ -32,20 +32,28 @@ echo '<!DOCTYPE html>
     <link rel="stylesheet" href="misje.css">
 </head>
 <body>
-    <div class="fade-in">
-        Musisz dostać się do dziennika elektronicznego. Wiemy, że
-        nauczyciel do logowania używa maila <b>informatyk@fajna-szkola.pl</b>. Teraz należy podać hasło,
-        które jest wynikiem zapytania:<br><br>
-    </div>
-    <div class="fade-in2">
-        Musisz skontaktować się z jednym z klientów. Znajdź jego
-        numer telefonu w tabeli &quot;klienci&quot;. Osoba której szukasz miała wykonane zamówienie 20
-        lutego. Użyj połączeń tabeli.<br><br>
-    </div>
-    <form action="misja7.php" method="post">
-        <textarea name="quest" required></textarea><br>
-        <input type="submit" value="Wyślij"> 
-    </form><br><br>';
+    <div id="container">
+        <div id="main-1">
+            <div class="fade-in">
+                Musisz dostać się do dziennika elektronicznego. Wiemy, że
+                nauczyciel do logowania używa maila <b>informatyk@fajna-szkola.pl</b>. Teraz należy podać hasło,
+                które jest wynikiem zapytania:<br><br>
+            </div>
+            <div class="fade-in2">
+                Musisz skontaktować się z jednym z klientów. Znajdź jego
+                numer telefonu w tabeli &quot;klienci&quot;. Osoba której szukasz miała wykonane zamówienie 20
+                lutego. Użyj połączeń tabeli.<br><br>
+            </div>
+            <form action="misja7.php" method="post">
+                <textarea name="quest" required></textarea><br>
+                <input type="submit" value="Wyślij"> 
+            </form><br><br>
+        </div>
+        <div id="main-2">
+            <p class="fade-in">Struktura bazy danych</p><br><br>
+            <img src="baza.PNG" class="fade-in2">
+        </div>
+    </div>';
 
     function sprobuj($qst) {
         if ($qst != 199267094) {
@@ -70,10 +78,10 @@ echo '<!DOCTYPE html>
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
                 echo '<div class="fade-in">
-                    <p style="font-size: 24px;"><b>GRATULACJE!!</b></p>
+                    <p style="font-size: 24px; margin-top: 3.5rem; color: rgb(81, 255, 0);"><b>GRATULACJE!!</b></p>
                 </div><br><br>
                 <div class="fade-in2">
-                    <p style="font-size: 16px;">Udało Ci się zmienić ocenę w dzienniku. Dzięki Tobie Szymon będzie mógł pójść na
+                    <p style="font-size: 16px; margin-top: 3.5rem; color: rgb(81, 255, 0);">Udało Ci się zmienić ocenę w dzienniku. Dzięki Tobie Szymon będzie mógł pójść na
                     wymarzone studia.</p>';
                 // $_SESSION['next'] = 7;
                 //echo '<a href="cookies.php">Dalej</a>';
