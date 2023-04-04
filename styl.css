@@ -25,6 +25,11 @@ button {
   padding: 10px 20px;
 }
 
+#main button {
+  border:rgb(0, 226, 19) solid 2px;
+  background-color: none;
+}
+
 button:hover {
   background-color: rgb(0, 226, 19);
 }
@@ -53,7 +58,7 @@ button:hover {
   align-items: center;
 }
 
-a.button5{
+/* a.button5{
   display:inline-block;
   padding:0.46em 1.6em;
   border:0.1em solid #000000;
@@ -79,7 +84,7 @@ a.button5{
   display:block;
   margin:0.4em auto;
   }
-  }
+  } */
 
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 
@@ -142,8 +147,8 @@ a.button5{
   }
   .css-typing p:nth-child(1) {
     width: 5.5em;
-    -webkit-animation: type3 2s steps(25, end);
-    animation: type3 2s steps(25, end);
+    -webkit-animation: type3 1s steps(15, end);
+    animation: type3 1s steps(25, end);
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
@@ -151,10 +156,10 @@ a.button5{
   .css-typing p:nth-child(2) {
     width: 10em;
     opacity: 0;
-    -webkit-animation: type3 2s steps(28, end);
-    animation: type3 2s steps(28, end);
-    -webkit-animation-delay: 2s;
-    animation-delay: 2s;
+    -webkit-animation: type3 1s steps(28, end);
+    animation: type3 1s steps(28, end);
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
@@ -162,10 +167,10 @@ a.button5{
   .css-typing p:nth-child(3) {
     width: 59.2em;
     opacity: 0;
-    -webkit-animation: type3 7.5s steps(150, end);
-    animation: type3 7.5s steps(150, end);
-    -webkit-animation-delay: 4s;
-    animation-delay: 4s;
+    -webkit-animation: type3 4s steps(150, end);
+    animation: type3 4s steps(150, end);
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
@@ -173,10 +178,10 @@ a.button5{
   .css-typing p:nth-child(4) {
     width: 64.2em;
     opacity: 0;
-    -webkit-animation: type3 7.5s steps(150, end);
-    animation: type3 7.5s steps(150, end);
-    -webkit-animation-delay: 11.5s;
-    animation-delay: 11.5s;
+    -webkit-animation: type3 4s steps(150, end);
+    animation: type3 4s steps(150, end);
+    -webkit-animation-delay: 6s;
+    animation-delay: 6s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
@@ -184,10 +189,10 @@ a.button5{
   .css-typing p:nth-child(5) {
     width: 33.5em;
     opacity: 0;
-    -webkit-animation: type3 5s steps(80, end);
-    animation: type3 5s steps(80, end);
-    -webkit-animation-delay: 19s;
-    animation-delay: 19s;
+    -webkit-animation: type3 2s steps(80, end);
+    animation: type3 2s steps(80, end);
+    -webkit-animation-delay: 10s;
+    animation-delay: 10s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
@@ -195,10 +200,10 @@ a.button5{
   .css-typing p:nth-child(6) {
     width: 59.7em;
     opacity: 0;
-    -webkit-animation: type3 7.5s steps(150, end);
-    animation: type3 7.5s steps(150, end);
-    -webkit-animation-delay: 25s;
-    animation-delay: 25s;
+    -webkit-animation: type3 4s steps(150, end);
+    animation: type3 4s steps(150, end);
+    -webkit-animation-delay: 12s;
+    animation-delay: 12s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
@@ -206,10 +211,10 @@ a.button5{
   .css-typing p:nth-child(7) {
     width: 42em;
     opacity: 0;
-    -webkit-animation: type3 6s steps(100, end);
-    animation: type3 6s steps(100, end);
-    -webkit-animation-delay: 32.5s;
-    animation-delay: 32.5s;
+    -webkit-animation: type3 3s steps(100, end);
+    animation: type3 3s steps(100, end);
+    -webkit-animation-delay: 16s;
+    animation-delay: 16s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
@@ -217,50 +222,50 @@ a.button5{
   .css-typing p:nth-child(8) {
     width: 51.5em;
     opacity: 0;
-    -webkit-animation: type3 6s steps(110, end);
-    animation: type3 6s steps(110, end);
-    -webkit-animation-delay: 38.5s;
-    animation-delay: 38.5s;
+    -webkit-animation: type3 4s steps(110, end);
+    animation: type3 4s steps(110, end);
+    -webkit-animation-delay: 19s;
+    animation-delay: 19s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
   .css-typing p:nth-child(9) {
     width: 75em;
     opacity: 0;
-    -webkit-animation: type3 6s steps(135, end);
-    animation: type3 6s steps(135, end);
-    -webkit-animation-delay: 44.5s;
-    animation-delay: 44.5s;
+    -webkit-animation: type3 4s steps(135, end);
+    animation: type3 4s steps(135, end);
+    -webkit-animation-delay: 23s;
+    animation-delay: 23s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
   .css-typing p:nth-child(10) {
     width: 42em;
     opacity: 0;
-    -webkit-animation: type3 5s steps(160, end);
-    animation: type3 5s steps(160, end);
-    -webkit-animation-delay: 50.5s;
-    animation-delay: 50.5s;
+    -webkit-animation: type3 2s steps(160, end);
+    animation: type3 2s steps(160, end);
+    -webkit-animation-delay: 27s;
+    animation-delay: 27s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
   .css-typing p:nth-child(11) {
     width: 56em;
     opacity: 0;
-    -webkit-animation: type3 5s steps(160, end);
-    animation: type3 5s steps(160, end);
-    -webkit-animation-delay: 55.5s;
-    animation-delay: 55.5s;
+    -webkit-animation: type3 4s steps(160, end);
+    animation: type3 4s steps(160, end);
+    -webkit-animation-delay: 29s;
+    animation-delay: 29s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
   .css-typing p:nth-child(12) {
     width: 68em;
     opacity: 0;
-    -webkit-animation: type3 5s steps(160, end);
-    animation: type3 5s steps(160, end);
-    -webkit-animation-delay: 61.5s;
-    animation-delay: 61.5s;
+    -webkit-animation: type3 4s steps(160, end);
+    animation: type3 4s steps(160, end);
+    -webkit-animation-delay: 33s;
+    animation-delay: 33s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
@@ -269,8 +274,8 @@ a.button5{
     opacity: 0;
     -webkit-animation: type3 2s steps(70, end);
     animation: type3 2s steps(70, end);
-    -webkit-animation-delay: 66.5s;
-    animation-delay: 66.5s;
+    -webkit-animation-delay: 37s;
+    animation-delay: 37s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
   }
@@ -334,7 +339,7 @@ a.button5{
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    animation: fadeIn 1s ease-out 68.5s forwards;
+    animation: fadeIn 1s ease-out 39s forwards;
     opacity: 0;
   }
 
