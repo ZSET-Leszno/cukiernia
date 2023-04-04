@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION['next'] < 4) {
+    if(@$_SESSION['next'] < 4) {
         echo '<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -21,7 +21,6 @@
         </div>
         </body>';
     } else {
-        $_SESSION['cookieval'] = 4;
 echo '<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,6 +85,10 @@ echo '<!DOCTYPE html>
     }
     catch (Exception $error) {
         echo 'Wystąpił błąd, spróbuj ponownie';
+        if ($_SESSION['cookieval'] >= 5) {
+            echo '<br>Wykonałeś już poprzednie zadanie.';
+            echo '<a href="cookies.php">Dalej</a>';
+        }
     }
 
     mysqli_close($conn);

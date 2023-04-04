@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION['next'] < 5) {
+    if(@$_SESSION['next'] < 5) {
         echo '<!DOCTYPE html>
         <html lang="en">
         <head>
@@ -21,7 +21,6 @@
         </div>
         </body>';
     } else {
-        $_SESSION['cookieval'] = 5;
 echo '<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,15 +74,19 @@ echo '<!DOCTYPE html>
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                echo '<p style="margin-top: 3.5rem; color: rgb(81, 255, 0);">Super! Przed Tobą ostatni krok.<br>';
                 $_SESSION['next'] = 6;
                 $_SESSION['cookieval'] = 6;
+                echo '<p style="margin-top: 3.5rem; color: rgb(81, 255, 0);">Super! Przed Tobą ostatni krok.<br>';
                 echo '<a href="cookies.php">Dalej</a>';
             }
         }    
     }
     catch (Exception $error) {
         echo 'Wystąpił błąd, spróbuj ponownie';
+        if ($_SESSION['cookieval'] >= 5) {
+            echo '<br>Wykonałeś już poprzednie zadanie.';
+            echo '<a href="cookies.php">Dalej</a>';
+        }
     }
 
     mysqli_close($conn);

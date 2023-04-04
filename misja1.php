@@ -1,6 +1,8 @@
 <?php
     session_start();
-    $_SESSION['cookieval'] = 0;
+    if (!@$_SESSION['cookieval']) {
+        $_SESSION['cookieval'] = 0;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -56,15 +58,19 @@
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                echo '<p style="margin-top: 3.5rem; color: rgb(81, 255, 0);">Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.</p><br><br>';
                 $_SESSION['next'] = 1;
                 $_SESSION['cookieval'] = 1;
+                echo '<p style="margin-top: 3.5rem; color: rgb(81, 255, 0);">Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.</p><br><br>';
                 echo '<a href="cookies.php">Dalej</a>';
             }
         }    
     }
     catch (Exception $error) {
         echo 'Wystąpił błąd, spróbuj ponownie';
+        if ($_SESSION['cookieval'] >= 1) {
+            echo '<br>Wykonałeś już poprzednie zadanie.';
+            echo '<a href="cookies.php">Dalej</a>';
+        }
     }
 
     mysqli_close($conn);
