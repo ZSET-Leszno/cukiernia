@@ -28,7 +28,7 @@ echo '<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misja piąta</title>
+    <title>Misja szósta</title>
     <link rel="stylesheet" href="misje.css">
 </head>
 <body>
@@ -46,7 +46,7 @@ echo '<!DOCTYPE html>
     </form><br><br>';
 
     function sprobuj($qst) {
-        if ($qst != 12.59) {
+        if ($qst != "Kościan") {
             throw new Exception("Lekka kraksa");
         }
     }
@@ -69,6 +69,7 @@ echo '<!DOCTYPE html>
                 sprobuj($qst[0]);
                 echo 'Super! Przed Tobą ostatni krok.<br><br>';
                 $_SESSION['next'] = 6;
+                $_SESSION['cookieval'] = 6;
                 echo '<a href="cookies.php">Dalej</a>';
             }
         }    

@@ -37,5 +37,9 @@ if ($cookieval == 0) {
     header('Location: misja4.php');
 } elseif ($cookieval == 4) {
     header('Location: misja5.php');
+} elseif ($cookieval == 5) {
+    header('Location: misja6.php');
+} elseif ($cookieval == 6) {
+    header('Location: misja7.php');
 }
 ?>
