@@ -69,6 +69,7 @@ echo '<!DOCTYPE html>
                 sprobuj($qst[0]);
                 echo 'Super! Przed Tobą ostatni krok.<br><br>';
                 $_SESSION['next'] = 6;
+                $_SESSION['cookieval'] = 6;
                 echo '<a href="cookies.php">Dalej</a>';
             }
         }    

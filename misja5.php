@@ -69,8 +69,9 @@ echo '<!DOCTYPE html>
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
                 $_SESSION['next'] = 5;
+                $_SESSION['cookieval'] = 5;
+                echo 'Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.<br><br>';
                 echo '<a href="cookies.php">Dalej</a>';
             }
         }    
