@@ -37,8 +37,17 @@
     </div>
     <?php
     function sprobuj($qst) {
-        if ($qst != "Stanisław") {
-            throw new Exception("Lekka kraksa");
+        if ($qst != 'Stanisław') {
+            echo ("Wynik zapytania nie jest poprawny.");
+            if ($_SESSION['cookieval'] >= 1) {
+                echo '<br>Wykonałeś już to zadanie.';
+                echo '<a href="cookies.php">Dalej</a>';
+            }
+        } else {
+            echo '<p style="margin-top: 3.5rem; color: rgb(81, 255, 0);">Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.</p><br><br>';
+            $_SESSION['next'] = 1;
+            $_SESSION['cookieval'] = 1;
+            echo '<a href="cookies.php">Dalej</a>';
         }
     }
     
@@ -58,17 +67,13 @@
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                $_SESSION['next'] = 1;
-                $_SESSION['cookieval'] = 1;
-                echo '<p style="margin-top: 3.5rem; color: rgb(81, 255, 0);">Udało ci się! Przeszedłeś tę przeszkodę. Możesz przejść do następnego zadania.</p><br><br>';
-                echo '<a href="cookies.php">Dalej</a>';
             }
         }    
     }
     catch (Exception $error) {
         echo 'Wystąpił błąd, spróbuj ponownie';
         if ($_SESSION['cookieval'] >= 1) {
-            echo '<br>Wykonałeś już poprzednie zadanie.';
+            echo '<br>Wykonałeś już to zadanie.';
             echo '<a href="cookies.php">Dalej</a>';
         }
     }

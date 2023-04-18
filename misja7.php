@@ -56,7 +56,18 @@ echo '<!DOCTYPE html>
 
     function sprobuj($qst) {
         if ($qst != 199267094) {
-            throw new Exception("Lekka kraksa");
+            echo ("Wynik zapytania nie jest poprawny.");
+            if ($_SESSION['cookieval'] >= 7) {
+                echo '<br>Wykonałeś już to zadanie.';
+            }
+        } else {
+            echo '<div class="fade-in">
+            <p style="font-size: 24px; margin-top: 3.5rem; color: rgb(81, 255, 0);"><b>GRATULACJE!!</b></p>
+        </div><br><br>
+        <div class="fade-in2">
+            <p style="font-size: 16px; margin-top: 3.5rem; color: rgb(81, 255, 0);">Udało Ci się zmienić ocenę w dzienniku. Dzięki Tobie Szymon będzie mógł pójść na
+            wymarzone studia.</p>';
+            $_SESSION['cookieval'] = 7;
         }
     }
     
@@ -76,22 +87,13 @@ echo '<!DOCTYPE html>
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                echo '<div class="fade-in">
-                    <p style="font-size: 24px; margin-top: 3.5rem; color: rgb(81, 255, 0);"><b>GRATULACJE!!</b></p>
-                </div><br><br>
-                <div class="fade-in2">
-                    <p style="font-size: 16px; margin-top: 3.5rem; color: rgb(81, 255, 0);">Udało Ci się zmienić ocenę w dzienniku. Dzięki Tobie Szymon będzie mógł pójść na
-                    wymarzone studia.</p>';
-                // $_SESSION['next'] = 7;
-                //echo '<a href="cookies.php">Dalej</a>';
             }
         }    
     }
     catch (Exception $error) {
         echo 'Wystąpił błąd, spróbuj ponownie';
-        if ($_SESSION['cookieval'] >= 6) {
-            echo '<br>Wykonałeś już poprzednie zadanie.';
-            echo '<a href="cookies.php">Dalej</a>';
+        if ($_SESSION['cookieval'] >= 7) {
+            echo '<br>Wykonałeś już to zadanie.';
         }
     }
 

@@ -54,7 +54,16 @@ echo '<!DOCTYPE html>
 
     function sprobuj($qst) {
         if ($qst != 3) {
-            throw new Exception("Lekka kraksa");
+            echo ("Wynik zapytania nie jest poprawny.");
+            if ($_SESSION['cookieval'] >= 4) {
+                echo '<br>Wykonałeś już to zadanie.';
+                echo '<a href="cookies.php">Dalej</a>';
+            }
+        } else {
+            echo '<p style="margin-top: 3.5rem; color: rgb(81, 255, 0);">Brawo, znalazłeś pomieszczenie serwerowni.<br>';
+            $_SESSION['next'] = 4;
+            $_SESSION['cookieval'] = 4;
+            echo '<a href="cookies.php">Dalej</a>';
         }
     }
     
@@ -74,17 +83,13 @@ echo '<!DOCTYPE html>
             } else {
                 $qst = mysqli_fetch_array($zapytanie);
                 sprobuj($qst[0]);
-                $_SESSION['next'] = 4;
-                $_SESSION['cookieval'] = 4;
-                echo '<p style="margin-top: 3.5rem; color: rgb(81, 255, 0);">Brawo, znalazłeś pomieszczenie serwerowni.<br>';
-                echo '<a href="cookies.php">Dalej</a>';
             }
         }    
     }
     catch (Exception $error) {
         echo 'Wystąpił błąd, spróbuj ponownie';
         if ($_SESSION['cookieval'] >= 4) {
-            echo '<br>Wykonałeś już poprzednie zadanie.';
+            echo '<br>Wykonałeś już to zadanie.';
             echo '<a href="cookies.php">Dalej</a>';
         }
     }
