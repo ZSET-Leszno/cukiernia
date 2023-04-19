@@ -31,6 +31,11 @@ echo '<!DOCTYPE html>
     <link rel="stylesheet" href="misje.css">
 </head>
 <body>
+    <div id="index-button">
+        <a href="index.html">
+        <button>< Powrót<button>
+        </a>
+    </div>
     <div id="container">
         <div id="main-1">
             <div class="fade-in">

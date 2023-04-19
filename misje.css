@@ -1,4 +1,4 @@
-/* Reset styles */
+/* Znaczniki */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,7 +7,7 @@
   
   body {
     height: calc(100vh - 8em);
-    padding: 4em;
+    /* padding: 4em; */
     color: rgba(255,255,255,.75);
     font-family: 'Anonymous Pro', monospace;
     text-align: center; 
@@ -19,7 +19,7 @@
     font-size: 22px;
   }
   
-  button {
+  /* button {
     font-size: 24px;
     background-color: rgb(255, 2, 2);
     border: none;
@@ -28,7 +28,7 @@
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
-  }
+  } */
 
   h1 {
     font-size: 32px;
@@ -87,14 +87,16 @@
     text-decoration: none;
     transition: color 0.2s ease;
   }
-  
+
   a:hover {
     color: #3e8e41;
   }
 
+  /* IDs */
+
   #container {
     display: flex;
-
+    padding: 4em;
   }
 
   #main-1 {
@@ -105,6 +107,38 @@
 
   #main-2 {
     width: 40%;
+  }
+
+  #main-2 img {
+    width: 30vw;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  #index-button {
+    float: left;
+    margin-top: 2em;
+    margin-left: 2em;
+  }
+
+  #index-button button {
+    background-color: rgb(255, 2, 2);
+    border: none;
+    font-family: 'Anonymous Pro', monospace;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 1em;
+  }
+
+  #index-button button:hover {
+    background-color: rgb(170, 0, 0);
+  }
+
+  #index-button a {
+    all: initial;
   }
 
   /* Animacje */
